@@ -3,18 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Task App</title>
+    <title>Dev Bootcamp</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Task App</h1>
-        <div class="input-section">
-            <input type="text" id="taskInput" placeholder="Enter a new task">
-            <button id="addTaskBtn">Add Task</button>
+    <!-- Top-level page tabs -->
+    <div class="page-tabs">
+        <button class="page-tab active" data-target="tab-tasks">Task App</button>
+        <button class="page-tab" data-target="tab-instrument">Instrument Builder</button>
+    </div>
+
+    <!-- Task App Tab -->
+    <div id="tab-tasks" class="page-content active">
+        <div class="container">
+            <h1>Task App</h1>
+            <div class="input-section">
+                <input type="text" id="taskInput" placeholder="Enter a new task">
+                <button id="addTaskBtn">Add Task</button>
+            </div>
         </div>
         <ul id="taskList"></ul>
     </div>
+
+    <!-- Instrument Builder Tab -->
+    <div id="tab-instrument" class="page-content">
+        <div class="ib-wrapper">
+
+            <!-- Header -->
+            <div class="ib-header">
+                <button class="ib-back-btn">&#8592;</button>
+                <div class="ib-instrument-name">6NCM 90x110%</div>
+                <div class="ib-stock-info">
+                    <span class="ib-ticker">XYZ</span>
+                    <span class="ib-stock-desc"> - XYZ International Inc.</span>
+                    <span class="ib-stock-price"> $45.25</span>
+                </div>
+                <div class="ib-header-actions">
+                    <button class="ib-btn">Print</button>
+                    <button class="ib-btn">Save As</button>
+                    <button class="ib-btn ib-btn-primary">Save</button>
+                </div>
+            </div>
+
+            <!-- Sub-navigation -->
+            <div class="ib-subnav">
+                <div class="ib-subnav-left">
+                    <button class="ib-subnav-tab ib-tab-build">BUILD</button>
+                    <button class="ib-subnav-tab">Sizing</button>
+                    <button class="ib-subnav-tab">Timing</button>
+                    <button class="ib-subnav-tab">Shares Upfront</button>
+                    <button class="ib-subnav-tab">Price Protection</button>
+                    <button class="ib-subnav-tab ib-tab-active">Summary</button>
+                </div>
+                <button class="ib-subnav-tab ib-tab-analyze">ANALYZE</button>
+            </div>
+
+            <!-- Main content -->
+            <div class="ib-main">
+
+                <!-- Left: Controls Panel -->
+                <div class="ib-controls-panel">
+
+                    <!-- DISCOUNT -->
+                    <div class="ib-control">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">DISCOUNT</span>
+                            <span class="ib-control-value" id="discountDisplay">0.77% - $0.39/Share</span>
+                        </div>
+                        <div class="ib-slider-row">
+                            <div class="ib-drag-handle">&#8801;</div>
+                            <input type="range" class="ib-slider" id="discountSlider" min="0" max="50" value="27">
+                            <input type="radio" name="solveFor" class="ib-solve-radio" value="discount" title="Solve For">
+                        </div>
+                        <div class="ib-slider-limits"><span>0</span><span>50</span></div>
+                    </div>
+
+                    <!-- SIZE -->
+                    <div class="ib-control">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">SIZE</span>
+                            <span class="ib-control-value" id="sizeDisplay">450M</span>
+                        </div>
+                        <div class="ib-slider-row">
+                            <div class="ib-drag-handle">&#8801;</div>
+                            <input type="range" class="ib-slider" id="sizeSlider" min="300" max="800" value="450">
+                            <input type="radio" name="solveFor" class="ib-solve-radio" value="size" title="Solve For">
+                        </div>
+                        <div class="ib-slider-limits"><span>300M</span><span>800M</span></div>
+                    </div>
+
+                    <!-- EFFECTIVE DATE -->
+                    <div class="ib-control ib-control-date">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">EFFECTIVE</span>
+                            <div class="ib-date-group">
+                                <span class="ib-control-value ib-date-display" id="effectiveDisplay">Aug 15, 2014</span>
+                                <input type="date" class="ib-date-input" id="effectiveDate" value="2014-08-15">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MINIMUM MATURITY -->
+                    <div class="ib-control">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">MINIMUM MATURITY</span>
+                            <span class="ib-control-value" id="minMatDisplay">3mo</span>
+                        </div>
+                        <div class="ib-slider-row">
+                            <div class="ib-drag-handle">&#8801;</div>
+                            <input type="range" class="ib-slider" id="minMatSlider" min="1" max="12" value="3" step="1">
+                            <input type="radio" name="solveFor" class="ib-solve-radio" value="minMat" title="Solve For">
+                        </div>
+                        <div class="ib-slider-limits"><span>1mo</span><span>12mo</span></div>
+                    </div>
+
+                    <!-- MAXIMUM MATURITY -->
+                    <div class="ib-control">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">MAXIMUM MATURITY</span>
+                            <span class="ib-control-value" id="maxMatDisplay">12mo</span>
+                        </div>
+                        <div class="ib-slider-row">
+                            <div class="ib-drag-handle">&#8801;</div>
+                            <input type="range" class="ib-slider" id="maxMatSlider" min="1" max="18" value="12" step="1">
+                            <input type="radio" name="solveFor" class="ib-solve-radio" value="maxMat" title="Solve For">
+                        </div>
+                        <div class="ib-slider-limits"><span>1mo</span><span>18mo</span></div>
+                    </div>
+
+                    <!-- SHARES UPFRONT -->
+                    <div class="ib-control">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">SHARES UPFRONT</span>
+                            <span class="ib-control-value" id="sharesDisplay">80%</span>
+                        </div>
+                        <div class="ib-slider-row">
+                            <div class="ib-drag-handle">&#8801;</div>
+                            <input type="range" class="ib-slider" id="sharesSlider" min="50" max="90" value="80">
+                            <input type="radio" name="solveFor" class="ib-solve-radio" value="shares" title="Solve For">
+                        </div>
+                        <div class="ib-slider-limits"><span>50%</span><span>90%</span></div>
+                    </div>
+
+                    <!-- PRICE PROTECTION -->
+                    <div class="ib-control ib-control-toggle">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">PRICE PROTECTION</span>
+                            <div class="ib-toggle-group">
+                                <span class="ib-control-value ib-toggle-label" id="priceProtDisplay">Collared</span>
+                                <label class="ib-toggle">
+                                    <input type="checkbox" id="priceProtToggle" checked>
+                                    <span class="ib-toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAP -->
+                    <div class="ib-control" id="capControl">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">CAP</span>
+                            <span class="ib-control-value" id="capDisplay">80%</span>
+                        </div>
+                        <div class="ib-slider-row">
+                            <div class="ib-drag-handle">&#8801;</div>
+                            <input type="range" class="ib-slider" id="capSlider" min="75" max="100" value="80">
+                            <input type="radio" name="solveFor" class="ib-solve-radio" value="cap" title="Solve For">
+                        </div>
+                        <div class="ib-slider-limits"><span>75%</span><span>100%</span></div>
+                    </div>
+
+                    <!-- FLOOR -->
+                    <div class="ib-control" id="floorControl">
+                        <div class="ib-control-header">
+                            <span class="ib-control-label">FLOOR</span>
+                            <span class="ib-control-value" id="floorDisplay">120%</span>
+                        </div>
+                        <div class="ib-slider-row">
+                            <div class="ib-drag-handle">&#8801;</div>
+                            <input type="range" class="ib-slider" id="floorSlider" min="100" max="150" value="120">
+                            <input type="radio" name="solveFor" class="ib-solve-radio" value="floor" title="Solve For">
+                        </div>
+                        <div class="ib-slider-limits"><span>100%</span><span>150%</span></div>
+                    </div>
+
+                </div>
+
+                <!-- Add row button (between panels) -->
+                <div class="ib-panel-divider">
+                    <button class="ib-add-row-btn" id="addRowTop" title="Add row to matrix">+</button>
+                </div>
+
+                <!-- Right: Matrix Panel -->
+                <div class="ib-matrix-panel">
+
+                    <div class="ib-matrix-header">
+                        <div class="ib-matrix-title-row">
+                            <span class="ib-matrix-title">Optimal Discount on Maturity Date</span>
+                            <button class="ib-dropdown-btn">&#9660;</button>
+                        </div>
+                        <button class="ib-learn-btn">&#9432; Learn More</button>
+                    </div>
+
+                    <div class="ib-matrix-info-bar">
+                        <span>MIN MATURITY <strong id="infoMinMat">4mo</strong></span>
+                        <span class="ib-bar-sep">|</span>
+                        <span>MAX MATURITY <strong id="infoMaxMat">8mo</strong></span>
+                        <span class="ib-bar-sep">|</span>
+                        <span>DISCOUNT <strong id="infoDiscount">0.73% - $0.57</strong></span>
+                        <div class="ib-col-controls">
+                            <button class="ib-ctrl-btn" id="removeColBtn" title="Remove column">-</button>
+                            <button class="ib-ctrl-btn" id="addColBtn" title="Add column">+</button>
+                        </div>
+                    </div>
+
+                    <div class="ib-heatmap-wrapper" id="heatmapWrapper">
+                        <!-- Heatmap generated by JS -->
+                    </div>
+
+                    <div class="ib-row-controls">
+                        <button class="ib-ctrl-btn" id="removeRowBtn" title="Remove row">-</button>
+                        <span class="ib-x-axis-label">Maximum Maturity</span>
+                        <button class="ib-ctrl-btn" id="addRowBtn" title="Add row">+</button>
+                    </div>
+
+                    <div class="ib-nav-buttons">
+                        <button class="ib-btn ib-btn-back-nav">&#8249; Back</button>
+                        <button class="ib-btn ib-btn-primary">Go to Analyze &#8250;</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="instrument.js"></script>
 </body>
 </html>
