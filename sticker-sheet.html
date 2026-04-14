@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Icon Button Sticker Sheet — Corporate Blue</title>
+  <style>
+    :root {
+      --blue-900: #0D2B5E;
+      --blue-700: #1A4FA0;
+      --blue-600: #1F5FBF;
+      --blue-500: #2B74D8;
+      --blue-400: #4A90E2;
+      --blue-200: #A8CAFA;
+      --blue-100: #D6EAFF;
+      --blue-50:  #EBF4FF;
+      --white:    #FFFFFF;
+      --ink:      #0D1B34;
+      --muted:    #5B7BA8;
+      --bg:       #F0F5FB;
+      --border:   #C8DAEF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      padding: 48px 40px 80px;
+    }
+
+    /* ── Page Header ── */
+    .sheet-header {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .sheet-header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--blue-900);
+    }
+    .sheet-header .badge {
+      background: var(--blue-700);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin-bottom: 4px;
+    }
+    .sheet-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 44px;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 52px; }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sticker-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    /* ── Sticker Card ── */
+    .sticker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 18px 14px;
+      min-width: 96px;
+      cursor: default;
+      transition: box-shadow .15s, transform .15s;
+      box-shadow: 0 1px 3px rgba(13,43,94,.07);
+    }
+    .sticker:hover {
+      box-shadow: 0 6px 18px rgba(27,79,160,.16);
+      transform: translateY(-2px);
+    }
+    .sticker-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ── Icon Chip Sizes ── */
+    .icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+    }
+    .icon-wrap.filled {
+      background: var(--blue-700);
+      width: 52px; height: 52px;
+      color: #fff;
+    }
+    .icon-wrap.outline {
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-400);
+      width: 52px; height: 52px;
+      color: var(--blue-600);
+    }
+    .icon-wrap.ghost {
+      background: transparent;
+      width: 52px; height: 52px;
+      color: var(--blue-600);
+    }
+    .icon-wrap.chip {
+      background: var(--blue-100);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: var(--blue-700);
+      gap: 7px;
+      flex-direction: row;
+      height: auto;
+      width: auto;
+    }
+    .icon-wrap.chip span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue-700);
+      white-space: nowrap;
+    }
+
+    /* ── Pill Buttons ── */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 100px;
+      padding: 9px 20px;
+      border: none;
+      cursor: pointer;
+      transition: filter .15s;
+      letter-spacing: .2px;
+    }
+    .btn-pill.primary   { background: var(--blue-700); color: #fff; }
+    .btn-pill.secondary { background: var(--blue-50); color: var(--blue-700); border: 1.5px solid var(--blue-400); }
+    .btn-pill.ghost-btn { background: transparent; color: var(--blue-600); border: 1.5px solid var(--blue-400); }
+    .btn-pill.danger    { background: #C0392B; color: #fff; }
+    .btn-pill:hover { filter: brightness(1.08); }
+
+    /* ── Square Buttons ── */
+    .btn-sq {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 9px 18px;
+      border: none;
+      cursor: pointer;
+      transition: filter .15s;
+    }
+    .btn-sq.primary   { background: var(--blue-700); color: #fff; }
+    .btn-sq.secondary { background: var(--blue-50); color: var(--blue-700); border: 1.5px solid var(--blue-400); }
+    .btn-sq:hover { filter: brightness(1.08); }
+
+    /* ── Status Badges ── */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .status-badge.info    { background: var(--blue-100); color: var(--blue-700); }
+    .status-badge.success { background: #D4F5E4; color: #1A7A45; }
+    .status-badge.warn    { background: #FEF3CD; color: #8A5700; }
+    .status-badge.error   { background: #FDECEA; color: #C0392B; }
+
+    /* ── Input Mock ── */
+    .input-mock {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-400);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      width: 180px;
+    }
+    .input-mock.focus { border-color: var(--blue-600); box-shadow: 0 0 0 3px rgba(43,116,216,.2); }
+
+    /* ── Toggle ── */
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue-700);
+    }
+    .toggle {
+      width: 44px; height: 24px;
+      background: var(--blue-700);
+      border-radius: 100px;
+      position: relative;
+    }
+    .toggle::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: calc(100% - 21px);
+      width: 18px; height: 18px;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .toggle.off { background: var(--border); }
+    .toggle.off::after { left: 3px; }
+
+    /* ── Checkbox / Radio ── */
+    .check-mock {
+      width: 20px; height: 20px;
+      border-radius: 5px;
+      border: 2px solid var(--blue-600);
+      background: var(--blue-700);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .check-mock.unchecked { background: #fff; }
+    .radio-mock {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--blue-600);
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .radio-mock .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--blue-700);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 1px;
+      height: 52px;
+      background: var(--border);
+      align-self: center;
+    }
+
+    /* ── FAB ── */
+    .fab {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--blue-700);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(27,79,160,.35);
+    }
+    .fab.sm { width: 40px; height: 40px; border-radius: 50%; }
+
+    /* ── Swatch Row ── */
+    .swatch-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch {
+      width: 60px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: 5px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .4px;
+      color: rgba(255,255,255,.85);
+    }
+    .swatch.light { color: var(--muted); }
+
+    svg { display: block; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="sheet-header">
+    <h1>Form Icon Sticker Sheet</h1>
+    <span class="badge">Corporate Blue</span>
+  </div>
+  <p class="sheet-meta">Button + icon components for app form UIs &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; 2026</p>
+
+  <!-- ── 1. ICON BUTTONS ── -->
+  <div class="section">
+    <div class="section-title">Icon Buttons — Filled</div>
+    <div class="sticker-grid">
+
+      <!-- Text Input -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="12" rx="2"/>
+            <line x1="7" y1="12" x2="11" y2="12"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Text Field</span>
+      </div>
+
+      <!-- Search -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Search</span>
+      </div>
+
+      <!-- Calendar / Date -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="17" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <rect x="7" y="14" width="3" height="3" rx=".5" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Date</span>
+      </div>
+
+      <!-- Dropdown / Select -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <polyline points="8,11 12,15 16,11"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Select</span>
+      </div>
+
+      <!-- Upload -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16,16 12,12 8,16"/>
+            <line x1="12" y1="12" x2="12" y2="21"/>
+            <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Upload</span>
+      </div>
+
+      <!-- Download -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="8,17 12,21 16,17"/>
+            <line x1="12" y1="12" x2="12" y2="21"/>
+            <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Download</span>
+      </div>
+
+      <!-- Filter -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Filter</span>
+      </div>
+
+      <!-- Sort -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="15" y2="12"/>
+            <line x1="3" y1="18" x2="9" y2="18"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Sort</span>
+      </div>
+
+      <!-- Edit / Pencil -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Edit</span>
+      </div>
+
+      <!-- Delete / Trash -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3,6 5,6 21,6"/>
+            <path d="M19 6l-1 14H6L5 6"/>
+            <path d="M10 11v6M14 11v6"/>
+            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Delete</span>
+      </div>
+
+      <!-- Save -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17,21 17,13 7,13 7,21"/>
+            <polyline points="7,3 7,8 15,8"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Save</span>
+      </div>
+
+      <!-- Refresh / Reset -->
+      <div class="sticker">
+        <div class="icon-wrap filled">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1,4 1,10 7,10"/>
+            <path d="M3.51 15a9 9 0 1 0 .49-5.5"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Reset</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 2. ICON BUTTONS — OUTLINE ── -->
+  <div class="section">
+    <div class="section-title">Icon Buttons — Outline</div>
+    <div class="sticker-grid">
+
+      <!-- Plus / Add -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Add</span>
+      </div>
+
+      <!-- Minus / Remove -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Remove</span>
+      </div>
+
+      <!-- Info -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <line x1="12" y1="8" x2="12" y2="8" stroke-width="2.5"/>
+            <line x1="12" y1="12" x2="12" y2="16"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Info</span>
+      </div>
+
+      <!-- Settings / Gear -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Settings</span>
+      </div>
+
+      <!-- User -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <span class="sticker-label">User</span>
+      </div>
+
+      <!-- Lock -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Lock</span>
+      </div>
+
+      <!-- Copy -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Copy</span>
+      </div>
+
+      <!-- Check / Confirm -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20,6 9,17 4,12"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Confirm</span>
+      </div>
+
+      <!-- Close / X -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Close</span>
+      </div>
+
+      <!-- Expand / Arrow -->
+      <div class="sticker">
+        <div class="icon-wrap outline">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6,9 12,15 18,9"/>
+          </svg>
+        </div>
+        <span class="sticker-label">Expand</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 3. PILL BUTTONS ── -->
+  <div class="section">
+    <div class="section-title">Pill Buttons</div>
+    <div class="sticker-grid" style="align-items:center;">
+
+      <div class="sticker">
+        <button class="btn-pill primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+          Save
+        </button>
+        <span class="sticker-label">Primary</span>
+      </div>
+
+      <div class="sticker">
+        <button class="btn-pill secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 1,10 7,10"/><path d="M3.51 15a9 9 0 1 0 .49-5.5"/></svg>
+          Reset
+        </button>
+        <span class="sticker-label">Secondary</span>
+      </div>
+
+      <div class="sticker">
+        <button class="btn-pill ghost-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Row
+        </button>
+        <span class="sticker-label">Ghost</span>
+      </div>
+
+      <div class="sticker">
+        <button class="btn-pill danger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 5,6 21,6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          Delete
+        </button>
+        <span class="sticker-label">Danger</span>
+      </div>
+
+      <div class="sticker">
+        <button class="btn-pill primary">
+          Submit
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+        </button>
+        <span class="sticker-label">CTA</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 4. SQUARE BUTTONS ── -->
+  <div class="section">
+    <div class="section-title">Square Buttons</div>
+    <div class="sticker-grid" style="align-items:center;">
+
+      <div class="sticker">
+        <button class="btn-sq primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          Search
+        </button>
+        <span class="sticker-label">Primary</span>
+      </div>
+
+      <div class="sticker">
+        <button class="btn-sq secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/></svg>
+          Filter
+        </button>
+        <span class="sticker-label">Secondary</span>
+      </div>
+
+      <div class="sticker">
+        <button class="btn-sq primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16,16 12,12 8,16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          Upload
+        </button>
+        <span class="sticker-label">Upload</span>
+      </div>
+
+      <div class="sticker">
+        <button class="btn-sq secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,17 12,21 16,17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>
+          Export
+        </button>
+        <span class="sticker-label">Export</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 5. FORM CONTROLS ── -->
+  <div class="section">
+    <div class="section-title">Form Controls</div>
+    <div class="sticker-grid" style="align-items:center;">
+
+      <!-- Checkbox checked -->
+      <div class="sticker">
+        <div class="check-mock">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
+        </div>
+        <span class="sticker-label">Checked</span>
+      </div>
+
+      <!-- Checkbox unchecked -->
+      <div class="sticker">
+        <div class="check-mock unchecked"></div>
+        <span class="sticker-label">Unchecked</span>
+      </div>
+
+      <!-- Radio selected -->
+      <div class="sticker">
+        <div class="radio-mock"><div class="dot"></div></div>
+        <span class="sticker-label">Selected</span>
+      </div>
+
+      <!-- Radio empty -->
+      <div class="sticker">
+        <div class="radio-mock"></div>
+        <span class="sticker-label">Unselected</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Toggle ON -->
+      <div class="sticker">
+        <div class="toggle-wrap">
+          <div class="toggle"></div>
+          <span>ON</span>
+        </div>
+        <span class="sticker-label">Toggle On</span>
+      </div>
+
+      <!-- Toggle OFF -->
+      <div class="sticker">
+        <div class="toggle-wrap">
+          <div class="toggle off"></div>
+          <span style="color:var(--muted)">OFF</span>
+        </div>
+        <span class="sticker-label">Toggle Off</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 6. INPUT FIELDS ── -->
+  <div class="section">
+    <div class="section-title">Input Field Mockups</div>
+    <div class="sticker-grid" style="align-items:center;">
+
+      <div class="sticker">
+        <div class="input-mock">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          Search…
+        </div>
+        <span class="sticker-label">Search Input</span>
+      </div>
+
+      <div class="sticker">
+        <div class="input-mock focus">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-600)"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="7" y1="12" x2="11" y2="12"/></svg>
+          Enter value…
+        </div>
+        <span class="sticker-label">Text (Focus)</span>
+      </div>
+
+      <div class="sticker">
+        <div class="input-mock">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          mm/dd/yyyy
+        </div>
+        <span class="sticker-label">Date Input</span>
+      </div>
+
+      <div class="sticker">
+        <div class="input-mock">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="8,11 12,15 16,11"/></svg>
+          Choose option…
+        </div>
+        <span class="sticker-label">Dropdown</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 7. STATUS BADGES ── -->
+  <div class="section">
+    <div class="section-title">Status Badges</div>
+    <div class="sticker-grid" style="align-items:center;">
+
+      <div class="sticker">
+        <span class="status-badge info">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="8" stroke-width="3.5"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+          Info
+        </span>
+        <span class="sticker-label">Info</span>
+      </div>
+
+      <div class="sticker">
+        <span class="status-badge success">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
+          Saved
+        </span>
+        <span class="sticker-label">Success</span>
+      </div>
+
+      <div class="sticker">
+        <span class="status-badge warn">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Warning
+        </span>
+        <span class="sticker-label">Warning</span>
+      </div>
+
+      <div class="sticker">
+        <span class="status-badge error">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          Error
+        </span>
+        <span class="sticker-label">Error</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 8. FABs ── -->
+  <div class="section">
+    <div class="section-title">FABs &amp; Icon Chips</div>
+    <div class="sticker-grid" style="align-items:center;">
+
+      <div class="sticker">
+        <div class="fab">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <span class="sticker-label">FAB Add</span>
+      </div>
+
+      <div class="sticker">
+        <div class="fab">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <span class="sticker-label">FAB Edit</span>
+      </div>
+
+      <div class="sticker">
+        <div class="fab sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </div>
+        <span class="sticker-label">FAB SM</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="sticker">
+        <div class="icon-wrap chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/></svg>
+          <span>Filters</span>
+        </div>
+        <span class="sticker-label">Chip</span>
+      </div>
+
+      <div class="sticker">
+        <div class="icon-wrap chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="9" y2="18"/></svg>
+          <span>Sort By</span>
+        </div>
+        <span class="sticker-label">Chip</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 9. COLOR PALETTE ── -->
+  <div class="section">
+    <div class="section-title">Color Palette</div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#0D2B5E">900</div>
+      <div class="swatch" style="background:#1A4FA0">700</div>
+      <div class="swatch" style="background:#1F5FBF">600</div>
+      <div class="swatch" style="background:#2B74D8">500</div>
+      <div class="swatch" style="background:#4A90E2">400</div>
+      <div class="swatch light" style="background:#A8CAFA">200</div>
+      <div class="swatch light" style="background:#D6EAFF">100</div>
+      <div class="swatch light" style="background:#EBF4FF; border:1.5px solid #C8DAEF">50</div>
+    </div>
+  </div>
+
+</body>
+</html>
