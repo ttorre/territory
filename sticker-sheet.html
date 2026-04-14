@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Icon Button Sticker Sheet — Corporate Blue</title>
+  <title>Form Component Sheet — Corporate Blue</title>
   <style>
     :root {
       --blue-900: #0D2B5E;
       --blue-700: #1A4FA0;
       --blue-600: #1F5FBF;
       --blue-500: #2B74D8;
-      --blue-400: #4A90E2;
       --blue-200: #A8CAFA;
       --blue-100: #D6EAFF;
       --blue-50:  #EBF4FF;
       --white:    #FFFFFF;
       --ink:      #0D1B34;
+      --ink-2:    #2E3F5C;
       --muted:    #5B7BA8;
+      --muted-lt: #8BA8C8;
       --bg:       #F0F5FB;
       --border:   #C8DAEF;
+      --radius:   8px;
+      --focus-ring: 0 0 0 3px rgba(43,116,216,.22);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,833 +30,846 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
       background: var(--bg);
       color: var(--ink);
-      padding: 48px 40px 80px;
+      padding: 48px 44px 100px;
+      font-size: 14px;
     }
 
-    /* ── Page Header ── */
-    .sheet-header {
-      display: flex;
-      align-items: flex-end;
-      gap: 16px;
-      margin-bottom: 8px;
-    }
-    .sheet-header h1 {
-      font-size: 28px;
+    /* ─── Page header ─── */
+    .header { margin-bottom: 48px; }
+    .header h1 {
+      font-size: 26px;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: -.4px;
       color: var(--blue-900);
     }
-    .sheet-header .badge {
+    .header .sub {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .badge {
+      display: inline-block;
       background: var(--blue-700);
       color: #fff;
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 10px;
+      font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: 20px;
-      margin-bottom: 4px;
-    }
-    .sheet-meta {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 44px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 10px;
+      vertical-align: middle;
     }
 
-    /* ── Section ── */
-    .section { margin-bottom: 52px; }
+    /* ─── Section ─── */
+    .section { margin-bottom: 56px; }
     .section-title {
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 20px;
-      padding-bottom: 8px;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
       border-bottom: 1px solid var(--border);
     }
-    .sticker-grid {
+    .section-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: -16px;
+      margin-bottom: 24px;
+    }
+
+    /* ─── Row + Card ─── */
+    .row {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 14px;
       align-items: flex-start;
     }
-
-    /* ── Sticker Card ── */
-    .sticker {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
+    .card {
       background: var(--white);
       border: 1.5px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       padding: 20px 18px 14px;
-      min-width: 96px;
-      cursor: default;
-      transition: box-shadow .15s, transform .15s;
-      box-shadow: 0 1px 3px rgba(13,43,94,.07);
-    }
-    .sticker:hover {
-      box-shadow: 0 6px 18px rgba(27,79,160,.16);
-      transform: translateY(-2px);
-    }
-    .sticker-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    /* ── Icon Chip Sizes ── */
-    .icon-wrap {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
-    .icon-wrap.filled {
-      background: var(--blue-700);
-      width: 52px; height: 52px;
-      color: #fff;
+    .card-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--muted-lt);
     }
-    .icon-wrap.outline {
-      background: var(--blue-50);
-      border: 1.5px solid var(--blue-400);
-      width: 52px; height: 52px;
-      color: var(--blue-600);
-    }
-    .icon-wrap.ghost {
-      background: transparent;
-      width: 52px; height: 52px;
-      color: var(--blue-600);
-    }
-    .icon-wrap.chip {
-      background: var(--blue-100);
-      border-radius: 8px;
-      padding: 10px 14px;
-      color: var(--blue-700);
-      gap: 7px;
-      flex-direction: row;
-      height: auto;
-      width: auto;
-    }
-    .icon-wrap.chip span {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--blue-700);
-      white-space: nowrap;
+    .card-use {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: -4px;
     }
 
-    /* ── Pill Buttons ── */
-    .btn-pill {
+    /* ─── Primary Buttons (filled) ─── */
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
       font-size: 13px;
       font-weight: 600;
-      border-radius: 100px;
-      padding: 9px 20px;
-      border: none;
-      cursor: pointer;
-      transition: filter .15s;
-      letter-spacing: .2px;
-    }
-    .btn-pill.primary   { background: var(--blue-700); color: #fff; }
-    .btn-pill.secondary { background: var(--blue-50); color: var(--blue-700); border: 1.5px solid var(--blue-400); }
-    .btn-pill.ghost-btn { background: transparent; color: var(--blue-600); border: 1.5px solid var(--blue-400); }
-    .btn-pill.danger    { background: #C0392B; color: #fff; }
-    .btn-pill:hover { filter: brightness(1.08); }
-
-    /* ── Square Buttons ── */
-    .btn-sq {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 13px;
-      font-weight: 600;
-      border-radius: 8px;
+      border-radius: var(--radius);
       padding: 9px 18px;
       border: none;
       cursor: pointer;
-      transition: filter .15s;
+      letter-spacing: .1px;
+      transition: background .15s, box-shadow .15s, opacity .15s;
+      line-height: 1;
     }
-    .btn-sq.primary   { background: var(--blue-700); color: #fff; }
-    .btn-sq.secondary { background: var(--blue-50); color: var(--blue-700); border: 1.5px solid var(--blue-400); }
-    .btn-sq:hover { filter: brightness(1.08); }
-
-    /* ── Status Badges ── */
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 6px;
+    .btn-primary {
+      background: var(--blue-700);
+      color: #fff;
     }
-    .status-badge.info    { background: var(--blue-100); color: var(--blue-700); }
-    .status-badge.success { background: #D4F5E4; color: #1A7A45; }
-    .status-badge.warn    { background: #FEF3CD; color: #8A5700; }
-    .status-badge.error   { background: #FDECEA; color: #C0392B; }
+    .btn-primary:hover { background: var(--blue-600); }
+    .btn-primary:active { background: var(--blue-900); }
+    .btn-primary:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 
-    /* ── Input Mock ── */
-    .input-mock {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue-50);
-      border: 1.5px solid var(--blue-400);
-      border-radius: 8px;
-      padding: 9px 12px;
-      font-size: 13px;
+    /* Destructive primary */
+    .btn-danger {
+      background: #B91C1C;
+      color: #fff;
+    }
+    .btn-danger:hover { background: #991B1B; }
+
+    /* ─── Secondary Buttons (outline) ─── */
+    .btn-secondary {
+      background: var(--white);
+      color: var(--blue-700);
+      border: 1.5px solid var(--blue-500);
+    }
+    .btn-secondary:hover { background: var(--blue-50); }
+    .btn-secondary:active { background: var(--blue-100); }
+    .btn-secondary:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+    /* Ghost / text-only secondary */
+    .btn-ghost {
+      background: transparent;
       color: var(--muted);
-      width: 180px;
+      border: 1.5px solid var(--border);
     }
-    .input-mock.focus { border-color: var(--blue-600); box-shadow: 0 0 0 3px rgba(43,116,216,.2); }
+    .btn-ghost:hover { background: var(--bg); color: var(--ink-2); }
 
-    /* ── Toggle ── */
-    .toggle-wrap {
+    /* Size variants */
+    .btn-sm { padding: 6px 12px; font-size: 12px; }
+    .btn-lg { padding: 12px 24px; font-size: 15px; }
+
+    /* Disabled */
+    .btn[disabled] {
+      opacity: .4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Icon inside button */
+    .btn svg { flex-shrink: 0; }
+
+    /* ─── Inputs ─── */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 220px;
+    }
+    .field label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-2);
+    }
+    .field .hint {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: -2px;
+    }
+    .field .error-msg {
+      font-size: 11px;
+      color: #B91C1C;
+      margin-top: -2px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="datetime-local"],
+    select,
+    textarea {
+      width: 100%;
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--ink);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 9px 12px;
+      transition: border-color .15s, box-shadow .15s;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted-lt); }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue-500);
+      box-shadow: var(--focus-ring);
+    }
+    input.error { border-color: #EF4444; }
+    input.error:focus { box-shadow: 0 0 0 3px rgba(239,68,68,.2); }
+    input.success { border-color: #16A34A; }
+
+    /* Select custom arrow */
+    .select-wrap { position: relative; }
+    .select-wrap select { padding-right: 32px; cursor: pointer; }
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid var(--muted);
+      pointer-events: none;
+    }
+
+    /* Search with clear */
+    .search-wrap { position: relative; width: 100%; }
+    .search-wrap input { padding-left: 34px; }
+    .search-wrap .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted-lt);
+      pointer-events: none;
+    }
+
+    /* ─── Textarea ─── */
+    textarea {
+      resize: vertical;
+      min-height: 88px;
+      line-height: 1.5;
+    }
+
+    /* ─── Checkbox ─── */
+    .check-group, .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .check-item, .radio-item {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--blue-700);
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--ink-2);
+      user-select: none;
     }
-    .toggle {
-      width: 44px; height: 24px;
-      background: var(--blue-700);
-      border-radius: 100px;
+    .check-item input[type="checkbox"],
+    .radio-item input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      accent-color: var(--blue-700);
+      border-radius: var(--radius);
+    }
+    .check-item input[type="checkbox"] { border-radius: var(--radius); }
+    .check-item .check-desc, .radio-item .radio-desc {
+      font-size: 11px;
+      color: var(--muted);
+      display: block;
+      margin-top: 1px;
+    }
+    .check-item span, .radio-item span {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Toggle ─── */
+    .toggle-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .toggle-item .toggle-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+    .toggle-item .toggle-desc {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .toggle-switch {
       position: relative;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
     }
-    .toggle::after {
+    .toggle-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track {
+      position: absolute;
+      inset: 0;
+      background: var(--border);
+      border-radius: var(--radius);
+      transition: background .2s;
+      cursor: pointer;
+    }
+    .toggle-track::after {
       content: '';
       position: absolute;
-      top: 3px; left: calc(100% - 21px);
-      width: 18px; height: 18px;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
       background: #fff;
-      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2);
+      transition: transform .2s;
     }
-    .toggle.off { background: var(--border); }
-    .toggle.off::after { left: 3px; }
+    .toggle-switch input:checked + .toggle-track { background: var(--blue-700); }
+    .toggle-switch input:checked + .toggle-track::after { transform: translateX(20px); }
+    .toggle-switch input:focus-visible + .toggle-track { box-shadow: var(--focus-ring); }
 
-    /* ── Checkbox / Radio ── */
-    .check-mock {
-      width: 20px; height: 20px;
-      border-radius: 5px;
-      border: 2px solid var(--blue-600);
-      background: var(--blue-700);
-      display: flex; align-items: center; justify-content: center;
+    /* ─── Range ─── */
+    input[type="range"] {
+      width: 100%;
+      height: 4px;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      border-radius: 2px;
+      background: var(--blue-100);
+      accent-color: var(--blue-700);
+      cursor: pointer;
     }
-    .check-mock.unchecked { background: #fff; }
-    .radio-mock {
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      border: 2px solid var(--blue-600);
-      background: #fff;
-      display: flex; align-items: center; justify-content: center;
+    input[type="range"]:focus { box-shadow: none; }
+    .range-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .radio-mock .dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--blue-700);
-    }
-
-    /* ── Divider ── */
-    .divider {
-      width: 1px;
-      height: 52px;
-      background: var(--border);
-      align-self: center;
+    .range-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue-700);
+      min-width: 36px;
+      text-align: right;
     }
 
-    /* ── FAB ── */
-    .fab {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--blue-700);
-      color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 14px rgba(27,79,160,.35);
+    /* ─── Input group (prefix/suffix) ─── */
+    .input-group {
+      display: flex;
+      width: 100%;
     }
-    .fab.sm { width: 40px; height: 40px; border-radius: 50%; }
+    .input-affix {
+      display: flex;
+      align-items: center;
+      padding: 0 11px;
+      background: var(--blue-50);
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .input-affix.prefix {
+      border-right: none;
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+    .input-affix.suffix {
+      border-left: none;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .input-group input {
+      flex: 1;
+      border-radius: 0;
+    }
+    .input-group input:first-of-type:not(:last-of-type) {
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+    .input-group input:last-of-type:not(:first-of-type) {
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
 
-    /* ── Swatch Row ── */
-    .swatch-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    /* ─── Button group ─── */
+    .btn-group {
+      display: inline-flex;
+    }
+    .btn-group .btn {
+      border-radius: 0;
+      border-right-width: 0;
+    }
+    .btn-group .btn:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .btn-group .btn:last-child  { border-radius: 0 var(--radius) var(--radius) 0; border-right-width: 1.5px; }
+
+    /* ─── Divider ─── */
+    .vr { width: 1px; background: var(--border); align-self: stretch; margin: 0 6px; }
+
+    /* ─── Color swatches ─── */
+    .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
     .swatch {
-      width: 60px; height: 40px;
-      border-radius: 10px;
-      display: flex; align-items: flex-end; justify-content: center;
-      padding-bottom: 5px;
+      width: 52px; height: 36px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 4px;
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: .4px;
-      color: rgba(255,255,255,.85);
+      letter-spacing: .3px;
     }
-    .swatch.light { color: var(--muted); }
 
-    svg { display: block; flex-shrink: 0; }
+    /* ─── Number input spin hide ─── */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { opacity: 1; }
   </style>
 </head>
 <body>
 
-  <div class="sheet-header">
-    <h1>Form Icon Sticker Sheet</h1>
-    <span class="badge">Corporate Blue</span>
+  <div class="header">
+    <h1>Form Components <span class="badge">Corporate Blue</span></h1>
+    <p class="sub">One example per distinct component type — 8px radius throughout</p>
   </div>
-  <p class="sheet-meta">Button + icon components for app form UIs &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; 2026</p>
 
-  <!-- ── 1. ICON BUTTONS ── -->
+
+  <!-- ══ 1. BUTTONS ══ -->
   <div class="section">
-    <div class="section-title">Icon Buttons — Filled</div>
-    <div class="sticker-grid">
+    <div class="section-title">Buttons</div>
+    <p class="section-desc">Primary = filled. Secondary = outline. One primary per form.</p>
+    <div class="row">
 
-      <!-- Text Input -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="6" width="18" height="12" rx="2"/>
-            <line x1="7" y1="12" x2="11" y2="12"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Text Field</span>
+      <div class="card">
+        <button class="btn btn-primary">Save Changes</button>
+        <span class="card-label">Primary</span>
+        <span class="card-use">Main action on a surface</span>
       </div>
 
-      <!-- Search -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"/>
-            <line x1="16.5" y1="16.5" x2="21" y2="21"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Search</span>
+      <div class="card">
+        <button class="btn btn-secondary">Cancel</button>
+        <span class="card-label">Secondary</span>
+        <span class="card-use">Supporting action alongside primary</span>
       </div>
 
-      <!-- Calendar / Date -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="17" rx="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-            <rect x="7" y="14" width="3" height="3" rx=".5" fill="currentColor" stroke="none"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Date</span>
+      <div class="card">
+        <button class="btn btn-ghost">Skip</button>
+        <span class="card-label">Ghost / Tertiary</span>
+        <span class="card-use">Optional, low-priority action</span>
       </div>
 
-      <!-- Dropdown / Select -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <polyline points="8,11 12,15 16,11"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Select</span>
+      <div class="card">
+        <button class="btn btn-danger">Delete Record</button>
+        <span class="card-label">Destructive</span>
+        <span class="card-use">Irreversible — use sparingly</span>
       </div>
 
-      <!-- Upload -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16,16 12,12 8,16"/>
-            <line x1="12" y1="12" x2="12" y2="21"/>
-            <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Upload</span>
+      <div class="card">
+        <button class="btn btn-primary" disabled>Save Changes</button>
+        <span class="card-label">Disabled</span>
+        <span class="card-use">Form incomplete or loading</span>
       </div>
 
-      <!-- Download -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="8,17 12,21 16,17"/>
-            <line x1="12" y1="12" x2="12" y2="21"/>
-            <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/>
-          </svg>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="btn btn-primary btn-sm">Small</button>
+          <button class="btn btn-primary">Default</button>
+          <button class="btn btn-primary btn-lg">Large</button>
         </div>
-        <span class="sticker-label">Download</span>
+        <span class="card-label">Sizes</span>
+        <span class="card-use">sm / default / lg</span>
       </div>
 
-      <!-- Filter -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/>
-          </svg>
+      <div class="card">
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-sm">Month</button>
+          <button class="btn btn-primary btn-sm">Week</button>
+          <button class="btn btn-secondary btn-sm">Day</button>
         </div>
-        <span class="sticker-label">Filter</span>
-      </div>
-
-      <!-- Sort -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="15" y2="12"/>
-            <line x1="3" y1="18" x2="9" y2="18"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Sort</span>
-      </div>
-
-      <!-- Edit / Pencil -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Edit</span>
-      </div>
-
-      <!-- Delete / Trash -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3,6 5,6 21,6"/>
-            <path d="M19 6l-1 14H6L5 6"/>
-            <path d="M10 11v6M14 11v6"/>
-            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Delete</span>
-      </div>
-
-      <!-- Save -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
-            <polyline points="17,21 17,13 7,13 7,21"/>
-            <polyline points="7,3 7,8 15,8"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Save</span>
-      </div>
-
-      <!-- Refresh / Reset -->
-      <div class="sticker">
-        <div class="icon-wrap filled">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="1,4 1,10 7,10"/>
-            <path d="M3.51 15a9 9 0 1 0 .49-5.5"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Reset</span>
+        <span class="card-label">Button Group</span>
+        <span class="card-use">Mutually exclusive view toggle</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 2. ICON BUTTONS — OUTLINE ── -->
+
+  <!-- ══ 2. TEXT INPUTS ══ -->
   <div class="section">
-    <div class="section-title">Icon Buttons — Outline</div>
-    <div class="sticker-grid">
+    <div class="section-title">Text Inputs</div>
+    <div class="row">
 
-      <!-- Plus / Add -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-          </svg>
+      <div class="card">
+        <div class="field">
+          <label for="inp-text">Full Name</label>
+          <input id="inp-text" type="text" placeholder="Jane Smith" autocomplete="name">
+          <span class="hint">autocomplete="name"</span>
         </div>
-        <span class="sticker-label">Add</span>
+        <span class="card-label">Text</span>
       </div>
 
-      <!-- Minus / Remove -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-          </svg>
+      <div class="card">
+        <div class="field">
+          <label for="inp-email">Email</label>
+          <input id="inp-email" type="email" placeholder="jane@company.com" autocomplete="email">
+          <span class="hint">autocomplete="email"</span>
         </div>
-        <span class="sticker-label">Remove</span>
+        <span class="card-label">Email</span>
       </div>
 
-      <!-- Info -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/>
-            <line x1="12" y1="8" x2="12" y2="8" stroke-width="2.5"/>
-            <line x1="12" y1="12" x2="12" y2="16"/>
-          </svg>
+      <div class="card">
+        <div class="field">
+          <label for="inp-pw">Password</label>
+          <input id="inp-pw" type="password" placeholder="Min. 8 characters" autocomplete="current-password">
+          <span class="hint">autocomplete="current-password"</span>
         </div>
-        <span class="sticker-label">Info</span>
+        <span class="card-label">Password</span>
       </div>
 
-      <!-- Settings / Gear -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-          </svg>
+      <div class="card">
+        <div class="field">
+          <label for="inp-tel">Phone</label>
+          <input id="inp-tel" type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel">
+          <span class="hint">autocomplete="tel"</span>
         </div>
-        <span class="sticker-label">Settings</span>
+        <span class="card-label">Tel</span>
       </div>
 
-      <!-- User -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
+      <div class="card">
+        <div class="field">
+          <label for="inp-num">Quantity</label>
+          <input id="inp-num" type="number" min="1" max="999" value="1" step="1">
+          <span class="hint">type="number" step="1"</span>
         </div>
-        <span class="sticker-label">User</span>
+        <span class="card-label">Number</span>
       </div>
 
-      <!-- Lock -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
+      <div class="card">
+        <div class="field">
+          <label for="inp-err">Amount</label>
+          <input id="inp-err" type="text" value="abc" class="error">
+          <span class="error-msg">Must be a valid number</span>
         </div>
-        <span class="sticker-label">Lock</span>
+        <span class="card-label">Error state</span>
       </div>
 
-      <!-- Copy -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-          </svg>
+      <div class="card">
+        <div class="field">
+          <label>Amount (USD)</label>
+          <div class="input-group">
+            <span class="input-affix prefix">$</span>
+            <input type="number" min="0" step="0.01" placeholder="0.00">
+            <span class="input-affix suffix">USD</span>
+          </div>
+          <span class="hint">Prefix + suffix affixes</span>
         </div>
-        <span class="sticker-label">Copy</span>
-      </div>
-
-      <!-- Check / Confirm -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20,6 9,17 4,12"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Confirm</span>
-      </div>
-
-      <!-- Close / X -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Close</span>
-      </div>
-
-      <!-- Expand / Arrow -->
-      <div class="sticker">
-        <div class="icon-wrap outline">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6,9 12,15 18,9"/>
-          </svg>
-        </div>
-        <span class="sticker-label">Expand</span>
+        <span class="card-label">Input Group</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 3. PILL BUTTONS ── -->
+
+  <!-- ══ 3. SEARCH + DATALIST ══ -->
   <div class="section">
-    <div class="section-title">Pill Buttons</div>
-    <div class="sticker-grid" style="align-items:center;">
+    <div class="section-title">Search &amp; Autocomplete (datalist)</div>
+    <div class="row">
 
-      <div class="sticker">
-        <button class="btn-pill primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
-          Save
-        </button>
-        <span class="sticker-label">Primary</span>
+      <div class="card">
+        <div class="field">
+          <label for="inp-search">Search</label>
+          <div class="search-wrap">
+            <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+            <input id="inp-search" type="search" placeholder="Search records…" list="search-suggestions" autocomplete="off">
+          </div>
+          <datalist id="search-suggestions">
+            <option value="Invoice #1042">
+            <option value="Invoice #1043">
+            <option value="Client: Acme Corp">
+            <option value="Client: Blue Ridge Inc">
+            <option value="Project: Q2 Rollout">
+          </datalist>
+          <span class="hint">Try "Invoice" or "Client"</span>
+        </div>
+        <span class="card-label">Search + suggestions</span>
       </div>
 
-      <div class="sticker">
-        <button class="btn-pill secondary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 1,10 7,10"/><path d="M3.51 15a9 9 0 1 0 .49-5.5"/></svg>
-          Reset
-        </button>
-        <span class="sticker-label">Secondary</span>
-      </div>
-
-      <div class="sticker">
-        <button class="btn-pill ghost-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Add Row
-        </button>
-        <span class="sticker-label">Ghost</span>
-      </div>
-
-      <div class="sticker">
-        <button class="btn-pill danger">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 5,6 21,6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
-          Delete
-        </button>
-        <span class="sticker-label">Danger</span>
-      </div>
-
-      <div class="sticker">
-        <button class="btn-pill primary">
-          Submit
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
-        </button>
-        <span class="sticker-label">CTA</span>
+      <div class="card">
+        <div class="field">
+          <label for="inp-country">Country</label>
+          <input id="inp-country" type="text" placeholder="Start typing…" list="country-list" autocomplete="country-name">
+          <datalist id="country-list">
+            <option value="United States">
+            <option value="United Kingdom">
+            <option value="Canada">
+            <option value="Australia">
+            <option value="Germany">
+            <option value="France">
+            <option value="Japan">
+          </datalist>
+          <span class="hint">Type a country name</span>
+        </div>
+        <span class="card-label">Text + datalist</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 4. SQUARE BUTTONS ── -->
+
+  <!-- ══ 4. DATE & TIME ══ -->
   <div class="section">
-    <div class="section-title">Square Buttons</div>
-    <div class="sticker-grid" style="align-items:center;">
+    <div class="section-title">Date &amp; Time</div>
+    <div class="row">
 
-      <div class="sticker">
-        <button class="btn-sq primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-          Search
-        </button>
-        <span class="sticker-label">Primary</span>
+      <div class="card">
+        <div class="field">
+          <label for="inp-date">Contract Date</label>
+          <input id="inp-date" type="date" autocomplete="off">
+        </div>
+        <span class="card-label">type="date"</span>
       </div>
 
-      <div class="sticker">
-        <button class="btn-sq secondary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/></svg>
-          Filter
-        </button>
-        <span class="sticker-label">Secondary</span>
+      <div class="card">
+        <div class="field">
+          <label for="inp-month">Reporting Period</label>
+          <input id="inp-month" type="month" autocomplete="off">
+        </div>
+        <span class="card-label">type="month"</span>
       </div>
 
-      <div class="sticker">
-        <button class="btn-sq primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16,16 12,12 8,16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
-          Upload
-        </button>
-        <span class="sticker-label">Upload</span>
+      <div class="card">
+        <div class="field">
+          <label for="inp-time">Meeting Time</label>
+          <input id="inp-time" type="time" autocomplete="off">
+        </div>
+        <span class="card-label">type="time"</span>
       </div>
 
-      <div class="sticker">
-        <button class="btn-sq secondary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,17 12,21 16,17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>
-          Export
-        </button>
-        <span class="sticker-label">Export</span>
+      <div class="card">
+        <div class="field">
+          <label for="inp-dt">Event Deadline</label>
+          <input id="inp-dt" type="datetime-local" autocomplete="off">
+        </div>
+        <span class="card-label">type="datetime-local"</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 5. FORM CONTROLS ── -->
+
+  <!-- ══ 5. SELECT ══ -->
   <div class="section">
-    <div class="section-title">Form Controls</div>
-    <div class="sticker-grid" style="align-items:center;">
+    <div class="section-title">Select</div>
+    <div class="row">
 
-      <!-- Checkbox checked -->
-      <div class="sticker">
-        <div class="check-mock">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
+      <div class="card">
+        <div class="field">
+          <label for="sel-status">Status</label>
+          <div class="select-wrap">
+            <select id="sel-status">
+              <option value="">Select status…</option>
+              <option>Draft</option>
+              <option>Pending Review</option>
+              <option>Approved</option>
+              <option>Rejected</option>
+            </select>
+          </div>
         </div>
-        <span class="sticker-label">Checked</span>
+        <span class="card-label">Select</span>
       </div>
 
-      <!-- Checkbox unchecked -->
-      <div class="sticker">
-        <div class="check-mock unchecked"></div>
-        <span class="sticker-label">Unchecked</span>
-      </div>
-
-      <!-- Radio selected -->
-      <div class="sticker">
-        <div class="radio-mock"><div class="dot"></div></div>
-        <span class="sticker-label">Selected</span>
-      </div>
-
-      <!-- Radio empty -->
-      <div class="sticker">
-        <div class="radio-mock"></div>
-        <span class="sticker-label">Unselected</span>
-      </div>
-
-      <div class="divider"></div>
-
-      <!-- Toggle ON -->
-      <div class="sticker">
-        <div class="toggle-wrap">
-          <div class="toggle"></div>
-          <span>ON</span>
+      <div class="card">
+        <div class="field">
+          <label for="sel-dept">Department</label>
+          <div class="select-wrap">
+            <select id="sel-dept">
+              <option value="">Choose…</option>
+              <optgroup label="Finance">
+                <option>Accounting</option>
+                <option>Treasury</option>
+              </optgroup>
+              <optgroup label="Operations">
+                <option>Engineering</option>
+                <option>Product</option>
+              </optgroup>
+            </select>
+          </div>
+          <span class="hint">Grouped with optgroup</span>
         </div>
-        <span class="sticker-label">Toggle On</span>
-      </div>
-
-      <!-- Toggle OFF -->
-      <div class="sticker">
-        <div class="toggle-wrap">
-          <div class="toggle off"></div>
-          <span style="color:var(--muted)">OFF</span>
-        </div>
-        <span class="sticker-label">Toggle Off</span>
+        <span class="card-label">Select + optgroup</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 6. INPUT FIELDS ── -->
+
+  <!-- ══ 6. RANGE ══ -->
   <div class="section">
-    <div class="section-title">Input Field Mockups</div>
-    <div class="sticker-grid" style="align-items:center;">
+    <div class="section-title">Range Slider</div>
+    <div class="row">
 
-      <div class="sticker">
-        <div class="input-mock">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-          Search…
+      <div class="card" style="min-width:280px">
+        <div class="field" style="width:100%">
+          <label>Discount</label>
+          <div class="range-row">
+            <input type="range" id="r1" min="0" max="50" value="12" step="0.5"
+              oninput="document.getElementById('rv1').textContent=this.value+'%'">
+            <span class="range-val" id="rv1">12%</span>
+          </div>
+          <span class="hint">0 – 50%, step 0.5</span>
         </div>
-        <span class="sticker-label">Search Input</span>
-      </div>
-
-      <div class="sticker">
-        <div class="input-mock focus">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-600)"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="7" y1="12" x2="11" y2="12"/></svg>
-          Enter value…
-        </div>
-        <span class="sticker-label">Text (Focus)</span>
-      </div>
-
-      <div class="sticker">
-        <div class="input-mock">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          mm/dd/yyyy
-        </div>
-        <span class="sticker-label">Date Input</span>
-      </div>
-
-      <div class="sticker">
-        <div class="input-mock">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="8,11 12,15 16,11"/></svg>
-          Choose option…
-        </div>
-        <span class="sticker-label">Dropdown</span>
+        <span class="card-label">Range</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 7. STATUS BADGES ── -->
+
+  <!-- ══ 7. TEXTAREA ══ -->
   <div class="section">
-    <div class="section-title">Status Badges</div>
-    <div class="sticker-grid" style="align-items:center;">
+    <div class="section-title">Textarea</div>
+    <div class="row">
 
-      <div class="sticker">
-        <span class="status-badge info">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="8" stroke-width="3.5"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
-          Info
-        </span>
-        <span class="sticker-label">Info</span>
-      </div>
-
-      <div class="sticker">
-        <span class="status-badge success">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
-          Saved
-        </span>
-        <span class="sticker-label">Success</span>
-      </div>
-
-      <div class="sticker">
-        <span class="status-badge warn">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Warning
-        </span>
-        <span class="sticker-label">Warning</span>
-      </div>
-
-      <div class="sticker">
-        <span class="status-badge error">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-          Error
-        </span>
-        <span class="sticker-label">Error</span>
+      <div class="card">
+        <div class="field" style="min-width:300px">
+          <label for="ta1">Notes</label>
+          <textarea id="ta1" placeholder="Add any relevant context…" autocomplete="off"></textarea>
+          <span class="hint">Resizable — max 500 characters</span>
+        </div>
+        <span class="card-label">Textarea</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 8. FABs ── -->
+
+  <!-- ══ 8. CHECKBOX ══ -->
   <div class="section">
-    <div class="section-title">FABs &amp; Icon Chips</div>
-    <div class="sticker-grid" style="align-items:center;">
+    <div class="section-title">Checkbox</div>
+    <div class="row">
 
-      <div class="sticker">
-        <div class="fab">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <div class="card">
+        <div class="check-group">
+          <label class="check-item">
+            <input type="checkbox" checked>
+            <span>Email notifications <span class="check-desc">Send alerts to your inbox</span></span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox">
+            <span>SMS alerts <span class="check-desc">Requires a verified phone number</span></span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" checked>
+            <span>Weekly digest <span class="check-desc">Rolled-up summary every Monday</span></span>
+          </label>
         </div>
-        <span class="sticker-label">FAB Add</span>
-      </div>
-
-      <div class="sticker">
-        <div class="fab">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-        </div>
-        <span class="sticker-label">FAB Edit</span>
-      </div>
-
-      <div class="sticker">
-        <div class="fab sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-        </div>
-        <span class="sticker-label">FAB SM</span>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="sticker">
-        <div class="icon-wrap chip">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/></svg>
-          <span>Filters</span>
-        </div>
-        <span class="sticker-label">Chip</span>
-      </div>
-
-      <div class="sticker">
-        <div class="icon-wrap chip">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="9" y2="18"/></svg>
-          <span>Sort By</span>
-        </div>
-        <span class="sticker-label">Chip</span>
+        <span class="card-label">Checkbox group</span>
       </div>
 
     </div>
   </div>
 
-  <!-- ── 9. COLOR PALETTE ── -->
+
+  <!-- ══ 9. RADIO ══ -->
+  <div class="section">
+    <div class="section-title">Radio</div>
+    <div class="row">
+
+      <div class="card">
+        <div class="field" style="gap:0">
+          <label style="margin-bottom:12px">Priority</label>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="priority" value="low">
+              <span>Low <span class="radio-desc">No immediate action needed</span></span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="priority" value="medium" checked>
+              <span>Medium <span class="radio-desc">Address within this sprint</span></span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="priority" value="high">
+              <span>High <span class="radio-desc">Block — needs fix today</span></span>
+            </label>
+          </div>
+        </div>
+        <span class="card-label">Radio group</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══ 10. TOGGLE ══ -->
+  <div class="section">
+    <div class="section-title">Toggle</div>
+    <div class="row">
+
+      <div class="card">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <label class="toggle-item">
+            <span class="toggle-switch">
+              <input type="checkbox" checked>
+              <span class="toggle-track"></span>
+            </span>
+            <span>
+              <span class="toggle-text">Two-factor authentication</span>
+              <span class="toggle-desc">Adds a second verification step on login</span>
+            </span>
+          </label>
+          <label class="toggle-item">
+            <span class="toggle-switch">
+              <input type="checkbox">
+              <span class="toggle-track"></span>
+            </span>
+            <span>
+              <span class="toggle-text">Public profile</span>
+              <span class="toggle-desc">Anyone can view your profile page</span>
+            </span>
+          </label>
+        </div>
+        <span class="card-label">Toggle — on / off states</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══ 11. COLOR PALETTE ══ -->
   <div class="section">
     <div class="section-title">Color Palette</div>
-    <div class="swatch-row">
-      <div class="swatch" style="background:#0D2B5E">900</div>
-      <div class="swatch" style="background:#1A4FA0">700</div>
-      <div class="swatch" style="background:#1F5FBF">600</div>
-      <div class="swatch" style="background:#2B74D8">500</div>
-      <div class="swatch" style="background:#4A90E2">400</div>
-      <div class="swatch light" style="background:#A8CAFA">200</div>
-      <div class="swatch light" style="background:#D6EAFF">100</div>
-      <div class="swatch light" style="background:#EBF4FF; border:1.5px solid #C8DAEF">50</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#0D2B5E;color:rgba(255,255,255,.75)">900</div>
+      <div class="swatch" style="background:#1A4FA0;color:rgba(255,255,255,.8)">700</div>
+      <div class="swatch" style="background:#1F5FBF;color:rgba(255,255,255,.8)">600</div>
+      <div class="swatch" style="background:#2B74D8;color:rgba(255,255,255,.85)">500</div>
+      <div class="swatch" style="background:#4A90E2;color:rgba(255,255,255,.9)">400</div>
+      <div class="swatch" style="background:#A8CAFA;color:rgba(13,43,94,.7)">200</div>
+      <div class="swatch" style="background:#D6EAFF;color:rgba(13,43,94,.6)">100</div>
+      <div class="swatch" style="background:#EBF4FF;color:rgba(13,43,94,.5);border:1px solid #C8DAEF">50</div>
     </div>
   </div>
+
 
 </body>
 </html>
